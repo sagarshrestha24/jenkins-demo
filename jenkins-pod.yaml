@@ -2,11 +2,10 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: kaniko
-  namespace: jenkins
 spec:
   containers:
   - name: kaniko
-    image: gcr.io/kaniko-project/executor:debug
+    image: gcr.io/kaniko-project/executor:debug-v0.16.0
     args: ["--context=git://github.com/sagarshrestha24/kaniko-demo",
             "--destination=sagark24/devops-toolkit:1.0.0"]
     volumeMounts:
@@ -16,7 +15,7 @@ spec:
   volumes:
     - name: kaniko-secret
       secret:
-        secretName: regcred
+        secretName: regcred1
         items:
           - key: .dockerconfigjson
             path: config.json
