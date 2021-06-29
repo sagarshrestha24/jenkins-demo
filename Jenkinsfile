@@ -1,6 +1,6 @@
 pipeline {
   agent {
-     any {
+     kubernetes {
       defaultContainer 'kaniko'
       yamlFile "jenkins-pod.yaml"
     }
