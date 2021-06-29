@@ -5,6 +5,8 @@ metadata:
   namespace: jenkins
 spec:
   containers:
+  - name: jnlp
+    image: jenkinsci/jnlp-slave
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug-v0.16.0
     args: ["--context=git://github.com/sagarshrestha24/kaniko-demo",
