@@ -8,7 +8,7 @@ spec:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     args: ["--context=git://github.com/sagarshrestha24/jenkins-demo",
-            "--destination=sagark24/devops-toolkit:1.0.0"]
+            "--destination=sagark24/devops-toolkit:v1"]
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
